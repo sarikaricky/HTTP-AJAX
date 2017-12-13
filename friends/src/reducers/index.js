@@ -19,7 +19,7 @@ const rootReducer = (friends = [], action) => {}
   }
 }
 const rootReducer = combineReducers({
-    friends: friendsReducer, addReducer
+    friends: friendsReducer, 
 });
 
 export default rootReducer;
