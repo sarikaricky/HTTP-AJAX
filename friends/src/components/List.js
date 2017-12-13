@@ -1,21 +1,28 @@
 import React from 'react';
 import axios from 'axios';
 
+import 
 function Friend(props) {
   return (
       <li className="friend" key={i}>
-      <p>{'Friend ${props.index + 1'}</p>
-      <p>{'Friend ${props.index + 1'}</p>
-      <p>{'Friend ${props.index + 1'}</p>
-      <p>{'Friend ${props.index + 1'}</p>
-      
+      <p>{'Friend: ${props.index + 1'}</p>
+      <p>{'Name: ${props.index + 1'}</p>
+      <p>{'Age: ${props.index + 1'}</p>
+      <p>{'Email:  ${props.index + 1'}</p>
+
 export default class List extends React.Component {
   componentDidMount() {
       const endpoint = 'http://localhost:5000/friends';
       axios.get(endpoint).then(function(response) {
-)     console.log('response', response);
-  });
-}
+          this.setState({ friends: response.data })
+      });
+  }
+
+  render() {
+      const getFriendList = () => {
+          return this.state.friends.map((friend, i) =>
+      }
+  }
   
   render() {
     return ( 
